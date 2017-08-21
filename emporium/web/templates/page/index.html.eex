@@ -1,0 +1,22 @@
+<div class="row">
+  <%= for doc <- @docs do %>
+    <div class="medium-4 columns">
+      <div class="card">
+        <div class="card-divider">
+          <h4><%= doc[:product] %></h4>
+        </div>
+        <img src="assets/img/generic/rectangle-1.jpg">
+        <div class="card-section">
+          <h4>
+            SKU: <%= doc[:sku] %>
+          </h4>
+          <p> Attributes </p>
+          <ul>
+            <li>Size: <%= doc[:attrs][:color] %></li>
+            <li>Size: <%= doc[:attrs][:size] %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

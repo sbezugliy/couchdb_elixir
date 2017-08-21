@@ -1,0 +1,28 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="logo">
+        Emporium
+      </li>
+      <li>
+        <%= link "Home", to: page_path(@conn, :index) %>
+      </li>
+      <li>
+        <%= link "Admin", to: backend_path(@conn, :index) %>
+      </li>
+      <li>
+        <%= link "Product", to: product_path(@conn, :index) %>
+      </li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+
+          <li>
+            <%= link "Login", to: "/", class: "button" %>
+          </li>
+
+      </li>
+    </ul>
+  </div>
+</div>

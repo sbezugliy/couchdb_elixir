@@ -1,0 +1,35 @@
+<h2>Listing products</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th rowspan="2">UUID</th>
+      <th rowspan="2">Product</th>
+      <th rowspan="2">Sku</th>
+      <th colspan="2">Attributes</th>
+      <th rowspan="2"></th>
+    </tr>
+    <tr>
+      <th>Color</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for product <- @products do %>
+    <tr>
+      <td><%= product[:_id] %></td>
+      <td><%= product[:product] %></td>
+      <td><%= product[:sku] %></td>
+      <td><%= product[:attrs][:color] %></td>
+      <td><%= product[:attrs][:size] %></td>
+      <td class="text-right">
+        <%= link "Show", to: product_path(@conn, :show, product[:_id]), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: product_path(@conn, :edit, product[:_id]), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: product_path(@conn, :delete, product[:_id]), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New product", to: product_path(@conn, :new) %>

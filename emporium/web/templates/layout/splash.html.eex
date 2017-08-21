@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%= render "head.html", conn: @conn %>
+
+  <body>
+    <%= render "navigation.html", conn: @conn %>
+
+    <section class="main-content row expanded">
+      <%= render "alerts.html", conn: @conn %>
+
+      <section class="text-center image-overlay row content">
+        <%= render @view_module, @view_template, assigns %>
+      </section>
+
+      <section class="about expanded row">
+        <div class="columns medium-12 large-4">
+          <div class="icon">
+            <i class="fi-like"></i>
+          </div>
+          <h2>What Powers This site</h2>
+          <p>
+            This site is powered by <a href="http://elixir-lang.org">Elixir</a>, <a href="http://phoenixframework.org">Phoenix Framework</a>  and <a href="http://couchdb.apache.org/">CouchDB</a>!
+          </p>
+        </div>
+        <div class="columns medium-12 large-4">
+          <div class="icon">
+            <i class="fi-comments"></i>
+          </div>
+          <h2>Footer column 2</h2>
+          <p>
+              Footer column 2
+          </p>
+        </div>
+        <div class="columns medium-12 large-4">
+          <div class="icon">
+            <i class="fi-pencil"></i>
+          </div>
+          <h2>Footer column 3</h2>
+          <p>
+            Footer column 3
+          <p>
+        </div>
+      </section>
+
+      <section class="more-info expanded row">
+        Some Blah-Blah-Text
+        <br />
+        <div class="social-media text-center">
+
+        </div>
+      </section>
+
+      <footer class="expanded row">
+        I'm a standard footer for your site! Maybe you can throw a copyright &copy; down here or something like that, or licensing! You know, whatever!
+      </footer>
+    </section>
+
+    <%= render "script.html", conn: @conn %>
+  </body>
+</html>
